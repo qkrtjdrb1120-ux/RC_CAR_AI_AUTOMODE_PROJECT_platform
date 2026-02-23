@@ -1,0 +1,6 @@
+Core/Src/automode.c 수정
+1) back 제거
+2) 좌우 distance 조건 추가
+
+Core/Src/freertos.c 수정
+1) ultrasonic task의 osDelay(40) -> osDelay(15)  
