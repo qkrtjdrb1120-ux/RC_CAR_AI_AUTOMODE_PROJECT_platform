@@ -10,3 +10,13 @@ WHERE member_name IN ('LEJ', 'LEJAI','PSK','WDH')
 GROUP BY member_name, run_Id
 ORDER BY member_name, run_Id;
 
+bluetoothctl
+scan on
+pair 98:DA:60:0C:AB:10
+trust 98:DA:60:0C:AB:10
+exit 
+
+sudo rfcomm bind 0 98:DA:60:0C:AB:10
+ls -l /dev/rfcomm0
+rfcomm show 0
+sudo rfcomm release 0
