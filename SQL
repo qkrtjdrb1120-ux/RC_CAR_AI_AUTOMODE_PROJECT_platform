@@ -1,0 +1,12 @@
+SELECT 
+    member_name,
+    run_Id, 
+    -- 마지막 시간에서 처음 시간을 빼서 주행 시간 계산
+    MAX(timestamp_ms) - MIN(timestamp_ms) AS lap_time,
+    -- is_collision이 1인 경우만 합산하여 충돌 횟수 계산
+    SUM(CASE WHEN is_collision = 1 THEN 1 ELSE 0 END) AS collision_count
+FROM driving_log
+WHERE member_name IN ('LEJ', 'LEJAI','PSK','WDH')
+GROUP BY member_name, run_Id
+ORDER BY member_name, run_Id;
+
