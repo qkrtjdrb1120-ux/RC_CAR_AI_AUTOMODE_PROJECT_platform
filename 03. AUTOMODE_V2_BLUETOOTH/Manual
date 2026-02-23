@@ -1,0 +1,13 @@
+<블루투스 정보>
+1) hc-06 블루투스 baud rate: 115200
+2) .ioc USART1 baud rate: 115200
+3) DMA Settings
+   DMA Request: USART1_RX  /  Priority: Low
+   DMA Request: USART1_TX  /  Priority: Low
+4) NVIC Settings
+   USART1 global interrupt: Enabled
+
+<수정사항>
+1) bluetooth.h 전면 수정
+2) bluetooth.c 전면 수정
+3) freertos.c 수정 (automode task)
